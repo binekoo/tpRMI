@@ -1,0 +1,46 @@
+Couche Session :
+
+Def Google de RMI : Remote Method Invocation (RMI) is an application programming interface (API) in the Java programming language and
+development environment. It allows objects on one computer or Java Virtual Machine (JVM) to interact with objects running on a different
+JVM in a distributed network.
+
+
+Pour faire des liens entre les couches : ajouter du code pour gérer
+2 protocoles connus permettent de gérer les sessions : Corba / RMI  mais très vieux, plus récemment : gRPC par Google.
+
+Pour le moment, on s'interesse à RMI (Remote Method Invocation) -> Sun Oracle
+Permet de faire une communication point à point non bufferisée (synchrone) entre deux machines.
+Inconvenient : surtout des communiactons qui sont au sein du framework Oracle -> communiactions filtrées par les outils de sécurité réseau.
+
+[demander schéma à nawres]
+
+stub = morceau de code tout fait -> requete idéale
+stub peut se traduire par un talon / une amorce, en info, on dira un client idéal.
+
+En java rmi, on utilise un design pattern Adapter.
+On veut exposer le code sur le reseau sans qu'il puisse etre modifié.
+On veut ne pouvoir acceder qu'a certaines methodes
+
+1- Définir les interfaces réseau.
+2- Implémenter ces contrats de cadrage.
+
+Besoin d'hériter de la classe UnicastRemoteObject qui permet de stocker un objet dans un annuaire.
+Pour déclarer qu'une interface est une interface RMI : ne sert qu'à lever l'exception "RemoteException"
+
+Qu'est ce qu'un Annuaire ?
+Il s'agit d'un livre avec deux colonnes : une avec des URLs et une avec des Stubs
+Quand on demande une URl, on récupère le stub ( = bout de code).
+Dans la JDK -> repertoire /bin, annuaire qui s'appelle rmiregistry
+
+Comment acczeder à l'annuaire ?
+Pour publier dedans, utiliser la classe Registry : java.rmiregistry.LocateRegistry.
+Elle permet de publier et de consulter.
+
+Dans un annuaire, qui publie et recherche ?
+Généralement, serveur.
+Publication de services invocables depuis le client.
+Ex : une classe BanqueServeur qui contient un main() qui permet de publier dans le registre.
+Associaton : couple URL + stub ==> faire un rebind (faire une assoc)
+Dans le main du client : on fait un lookup pour recherher un sevrice. La seule chose que le client connait : URL.
+Cette URL permet la récupération du stub.
+Donc deux méthodes à connaitre : lookup() et rebind().
