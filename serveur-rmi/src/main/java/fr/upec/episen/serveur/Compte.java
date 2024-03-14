@@ -24,4 +24,12 @@ public class Compte {
     public void setSolde(Double solde) {
         this.solde = solde;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("Compte : ");
+        builder.append("nuemero " + numero);
+        builder.append("solde : " + solde);
+        return builder.toString();
+    }
 }
