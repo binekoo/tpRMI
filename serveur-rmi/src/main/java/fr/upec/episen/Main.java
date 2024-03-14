@@ -7,8 +7,8 @@ import java.time.Duration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import fr.upec.episen.contrat.BanqueDistante;
 import fr.upec.episen.serveur.Banque;
-import fr.upec.episen.serveur.BanqueDistante;
 import fr.upec.episen.serveur.BanqueDistanteImp;
 
 /**Banque serveur */
