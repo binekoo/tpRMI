@@ -52,3 +52,7 @@ Particularité du TP & but: aucune classe partagée ou générée des deux coté
 - client-rmi
 - serveur-rmi
 Plus technique : Client.
+
+
+Remarques code :
+BAnque.java = choix de HashSet pour le set de Comptes car permet d'éviter les doublons avec les methnodes hashcode() et equals().

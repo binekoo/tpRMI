@@ -32,4 +32,26 @@ public class Compte {
         builder.append("solde : " + solde);
         return builder.toString();
     }
+
+    @Override
+    public int hashCode(){
+        return this.numero;
+    }
+
+    @Override
+    public boolean equals (Object obj){
+        if (obj==this){
+            return true;
+        }
+        else {
+            if(obj instanceof Compte){
+                Compte cpt = (Compte) obj;
+                if ( cpt.numero==this.numero && cpt.solde==this.solde){
+                    return true;
+                }
+                else return false;
+            }
+            else return false;
+        }
+    }
 }
