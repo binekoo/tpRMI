@@ -45,17 +45,18 @@ public class Banque {
         //1. tirer un numero
         Random random = new Random(System.currentTimeMillis());
         Optional<Compte> opt = Optional.empty();
+        Compte cpt = null;
         do{
             int num = random.nextInt(MAX);
             //2. tester son existance
             opt = getCompte(num);
             //3. si nouveau alors création
             if(opt.isEmpty()){
-                Compte cpt = new Compte(num);
+                cpt = new Compte(num);
                 comptes.add(cpt);
             }
-        } while(opt.isEmpty());
-        return opt.get().getNumero();
+        } while(opt.isPresent());
+        return cpt.getNumero();
     }
 
     @Override
