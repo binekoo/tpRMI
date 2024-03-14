@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args) {
         mainLog.warn("serveur-rmi started");
         //1. Création d'objets locaux
-        Banque bmci = new Banque("BMCI");
+        Banque bmci = new Banque("bmci");
         int i1 = bmci.creerCompte();
         mainLog.warn("creation : " + i1);
         int i2 = bmci.creerCompte();

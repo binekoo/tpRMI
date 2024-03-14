@@ -58,3 +58,15 @@ Remarques code :
 Banque.java = choix de HashSet pour le set de Comptes car permet d'éviter les doublons avec les methnodes hashcode() et equals().
 
 Classe CompteDistantImp : le "Imp" est une convention de langage chez ORacle pour les classes qui implémentent des interfaces rmi.
+
+serveur-rmi : deux parties : main / interfaces, contrat de codage
+-> partager les interfaces de service (BanqueDistant et CompteDistant) -> faire un jar avec ça dedans et toutes classes qui apparaissent dans les parametres des méthodes.
+
+1. Construire un nouveau jar
+2. Côté client : charger ce jar à l'execution : avant de se connecter à l'annuaire.
+Propriété java.rmi.codebase à qui on va donner une URL (notre jar).
+On a donc besoin sue le poste cient (donc la le notre aussi) d'un serveur http derrière lequel est placé le jar.
+
+Nom du jar : banque-service.jar
+
+Construire le jar revient à configurer Maven.

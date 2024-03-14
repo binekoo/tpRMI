@@ -1,4 +1,4 @@
-package fr.upec.episen.serveur;
+package fr.upec.episen.contrat;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

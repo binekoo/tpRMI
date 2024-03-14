@@ -25,6 +25,8 @@ public class Main {
             Remote remote = registry.lookup(serviceUrl);
             if(remote != null){
                 mainLog.warn(remote.toString());
+            } else {
+                mainLog.warn("Pas de service");
             }
             //2. Rechercher dans le service bmci
             //3. Demander le solde de son compte.

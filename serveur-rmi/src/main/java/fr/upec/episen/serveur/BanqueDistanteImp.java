@@ -4,9 +4,10 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.text.MessageFormat;
 import java.util.Optional;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import fr.upec.episen.contrat.BanqueDistante;
+import fr.upec.episen.contrat.CompteDistant;
 
 public class BanqueDistanteImp extends UnicastRemoteObject implements BanqueDistante{
     protected static Logger banqueLog = LogManager.getLogger(BanqueDistanteImp.class);

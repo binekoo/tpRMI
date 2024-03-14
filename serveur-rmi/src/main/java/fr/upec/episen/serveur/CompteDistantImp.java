@@ -2,9 +2,9 @@ package fr.upec.episen.serveur;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import fr.upec.episen.contrat.CompteDistant;
 
 public class CompteDistantImp extends UnicastRemoteObject implements CompteDistant{
     protected static Logger cptLog = LogManager.getLogger(CompteDistantImp.class);
