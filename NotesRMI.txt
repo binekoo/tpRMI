@@ -57,4 +57,4 @@ Plus technique : Client.
 Remarques code :
 Banque.java = choix de HashSet pour le set de Comptes car permet d'éviter les doublons avec les methnodes hashcode() et equals().
 
-Classe CompteDistant1 : le 1 est une convention de langage chez ORacle pour les ckasses qui implémentent des interfaces rmi.
+Classe CompteDistantImp : le "Imp" est une convention de langage chez ORacle pour les classes qui implémentent des interfaces rmi.
