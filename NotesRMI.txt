@@ -44,3 +44,11 @@ Associaton : couple URL + stub ==> faire un rebind (faire une assoc)
 Dans le main du client : on fait un lookup pour recherher un sevrice. La seule chose que le client connait : URL.
 Cette URL permet la récupération du stub.
 Donc deux méthodes à connaitre : lookup() et rebind().
+
+
+TP RMI : implémenter un système de banque.
+Particularité du TP & but: aucune classe partagée ou générée des deux cotés (client / servuer).
+2 projets :
+- client-rmi
+- serveur-rmi
+Plus technique : Client.
