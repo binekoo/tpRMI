@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class Banque {
+    private static final int MAX = 10000;
     protected String nom;
     protected Set<Compte> comptes;
 
@@ -39,13 +40,13 @@ public class Banque {
         return Optional.empty();
     }
 
-    /** ceration d'un nouveau compte */
+    /** creation d'un nouveau compte */
     public Integer creerCompte(){
         //1. tirer un numero
-        Random random = new Random();
+        Random random = new Random(System.currentTimeMillis());
         Optional<Compte> opt = Optional.empty();
         do{
-            int num = random.nextInt();
+            int num = random.nextInt(MAX);
             //2. tester son existance
             opt = getCompte(num);
             //3. si nouveau alors création
@@ -53,15 +54,15 @@ public class Banque {
                 Compte cpt = new Compte(num);
                 comptes.add(cpt);
             }
-        } while(opt.isPresent());
+        } while(opt.isEmpty());
         return opt.get().getNumero();
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("Banque : ");
-        builder.append("Nom : " + nom);
-        builder.append("Comptes : " + comptes.toString());
+        builder.append(" Nom : " + nom);
+        builder.append(" Comptes : " + comptes.toString());
         return builder.toString();
     }
 
