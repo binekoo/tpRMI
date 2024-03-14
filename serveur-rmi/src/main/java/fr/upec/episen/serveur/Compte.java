@@ -28,7 +28,7 @@ public class Compte {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("Compte : ");
-        builder.append(" Nuemero " + numero);
+        builder.append(" Numero " + numero);
         builder.append(" Solde : " + solde);
         return builder.toString();
     }
